@@ -38,6 +38,7 @@ dependencies:
 
 | Name                     | Default | Type   | Description                                                                     |
 | ------------------------ | ------- | ------ | ------------------------------------------------------------------------------- |
+| cron_daemon              |         | string | The cron daemon in different Linux distributions                                |
 | elao_cron_jobs.name      |         | string | Description of crontab entry. Must be unique.                                   |
 | elao_cron_jobs.job       |         | string | The command to execute. Required if state=present                               |
 | elao_cron_jobs.minute    | *       | string | Minute when the job should run (0-59, *, */2, etc)                              |
@@ -52,6 +53,7 @@ dependencies:
 ### Configuration example
 
 ```yaml
+cron_daemon: crond # In CentOS 7
 elao_cron_jobs:
   # Ensure a job that runs at 2 and 5 exists.
   # Creates an entry like "0 5,2 * * ls -alh > /dev/null"

@@ -1,6 +1,4 @@
 ---
 
 - name: cron restart
-  service:
-    name:  cron
-    state: restarted
+  service: "name:  {{ cron_daemon }} state: restarted sleep=2"
